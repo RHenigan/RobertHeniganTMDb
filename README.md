@@ -1,5 +1,5 @@
 # RobertHeniganTMDb
-This is an application that will display Popular, Top Rated, Upcomong, and Now Playing Movies based on the data retrieved from TMDb.com
+This is an application that will display Popular, Top Rated, Upcoming, and Now Playing Movies based on the data retrieved from TMDb.com
 
 # IMPORTANT:
 In order for this code to run you will need to create a values resource file to contain the api key.
