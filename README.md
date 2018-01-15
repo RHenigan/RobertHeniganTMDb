@@ -10,12 +10,13 @@ To do so follow the sets below:
   4) Inside of the new file "api_key.xml" your file will need to look like this:
   
 *Replace YOUR_API_KEY_HERE with your TMDb api key
-'''XML
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="apiKey" type="string">YOUR_API_KEY_HERE</item>
 </resources>
-'''
+```
 
 Once the api_key resource file is created and has teh apiKey item defined the app can be built.
 
