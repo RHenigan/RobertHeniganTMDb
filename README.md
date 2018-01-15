@@ -34,7 +34,7 @@ In the menu the refresh button will take the user back to the 1st page of result
 
 In the menu overflow on the toolbar the user can select to display Popular, Top Rated, Upcoming, or Now Playing movies to be displayed.
 
-If the user scrolls all the way to the bottom of list of movies the next page of resutls from TMDb will be loaded.
+If the user scrolls all the way to the bottom of list of movies the next page of results from TMDb will be loaded.
 
 The menu also contains an information button to take the user to the information page.
 
