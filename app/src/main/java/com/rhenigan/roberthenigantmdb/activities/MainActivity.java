@@ -35,12 +35,11 @@ public class MainActivity extends AppCompatActivity implements TMDbCallback {
     private List<Movie> mMovieDataSet = new ArrayList<>();
     private Toolbar mToolbar;
 
-    private int mFilter = 0;
-    // To be used to select which URL is used against The Movie Database
-    // mFilter = 0 --> Popular Movies
-    // mFilter = 1 --> Top Rated Movies
-    // mFilter = 2 --> Now Playing Movies
-    // mFilter = 3 --> Upcoming Movies
+    public enum Filter {
+        POPULAR, TOPRATED, NOWPLAYING, UPCOMING
+    }
+
+    Filter mFilter = Filter.POPULAR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements TMDbCallback {
         });
 
         //Request popular movies(mFilter = 0) from TMDb Client
-        TMDbClient.getInstance(this.getApplicationContext(), this).getMovies(0);
+        TMDbClient.getInstance(this.getApplicationContext(), this).getMovies(Filter.POPULAR);
         mToolbar.setTitle("Popular Movies");
     }
 
@@ -102,25 +101,25 @@ public class MainActivity extends AppCompatActivity implements TMDbCallback {
                 return true;
             case R.id.popular:
                 //Set mFilter for Popular Movie Search
-                mFilter = 0;
+                mFilter = Filter.POPULAR;
                 updateMovieList(mFilter);
                 mToolbar.setTitle("Popular Movies");
                 return true;
             case R.id.topRated:
                 //Set mFilter for Top Rated Movie Search
-                mFilter = 1;
+                mFilter = Filter.TOPRATED;
                 updateMovieList(mFilter);
                 mToolbar.setTitle("Top Rated Movies");
                 return true;
             case R.id.nowPlaying:
                 //Set mFilter for the Now Playing Movie Search
-                mFilter = 2;
+                mFilter = Filter.NOWPLAYING;
                 updateMovieList(mFilter);
                 mToolbar.setTitle("Now Playing Movies");
                 return true;
             case R.id.upcoming:
                 //Set mFilter for the Upcoming Movie Search
-                mFilter = 3;
+                mFilter = Filter.UPCOMING;
                 updateMovieList(mFilter);
                 mToolbar.setTitle("Upcoming Movies");
                 return true;
@@ -129,9 +128,6 @@ public class MainActivity extends AppCompatActivity implements TMDbCallback {
         }
     }
 
-    //Prevent user from returning to Splash Activity
-    @Override
-    public void onBackPressed() {}
 
     //Callback method for when information is successfully parsed by TMDbClient
     @Override
@@ -157,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements TMDbCallback {
     }
 
     //Used when user refreshes or performs a new search
-    private void updateMovieList(int filter) {
+    private void updateMovieList(Filter filter) {
         mMovieDataSet.clear();
         mAdapter.notifyDataSetChanged();
         mProgressBar.setVisibility(View.VISIBLE);

@@ -89,8 +89,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         //Using Glide to show movie banner in movie_card, using error icon as a placeholder
         Glide.with(mContext)
                 .load(mContext.getResources().getString(R.string.imageURL) + movieDataSet.get(position).getBackdropPath())
-                .apply(placeholderOf(R.drawable.ic_error_black_24dp))
                 .apply(fitCenterTransform())
+                .apply(placeholderOf(R.drawable.ic_error_black_24dp))
                 .into(holder.mPoster);
     }
 

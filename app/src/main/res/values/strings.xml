@@ -2,26 +2,30 @@
     <string name="app_name">TMDb Filter</string>
 
     <!--Random Quotes used for the splash activity-->
-    <string name="quote0">\"Great. I think I got it. But just in case… tell me the whole thing again, I wasn\'t listening.\"\n - <i>The Lego Movie</i></string>
-    <string name="quote1">\"\'Tis but a scratch!\"\n - <i>Monty Python and the Holy Grail"</i></string>
-    <string name="quote2">\"I go. You stay. No following.\"\n - <i>Iron Giant</i></string>
-    <string name="quote3">\"I like sand. Sand is squishy.\"\n - <i>Finding Dory</i></string>
-    <string name="quote4">\"To infinity, and beyond!\"\n - <i>Toy Story</i></string>
-    <string name="quote5">\"Just keep swimming. Just keep swimming. Just keep swimming, swimming, swimming. What do we do? We swim, swim.\"\n - <i>Finding Nemo</i></string>
-    <string name="quote6">\"This is my family. I found it, all on my own. Is little, and broken, but still good. Ya. Still good.\"\n - <i>Lilo and Stitch</i></string>
-    <string name="quote7">\"We\'re all pretty bizarre. Some of us are just better at hiding it, that\'s all.\"\n - <i>The Breakfast Club</i></string>
-    <string name="quote8">\"Hello. I am Baymax, your personal healthcare companion.\"\n - <i>Big Hero 6</i></string>
-    <string name="quote9">\"The secret impresses no one. The trick you use it for is everything.\"\n - <i>The Prestige</i></string>
+    <string-array name="quotes">
+        <item>\"Great. I think I got it. But just in case… tell me the whole thing again, I wasn\'t listening.\"\n - <i>The Lego Movie</i></item>
+        <item>\"\'Tis but a scratch!\"\n - <i>Monty Python and the Holy Grail"</i></item>
+        <item>\"I go. You stay. No following.\"\n - <i>Iron Giant</i></item>
+        <item>\"I like sand. Sand is squishy.\"\n - <i>Finding Dory</i></item>
+        <item>\"To infinity, and beyond!\"\n - <i>Toy Story</i></item>
+        <item>\"Just keep swimming. Just keep swimming. Just keep swimming, swimming, swimming. What do we do? We swim, swim.\"\n - <i>Finding Nemo</i></item>
+        <item>\"This is my family. I found it, all on my own. Is little, and broken, but still good. Ya. Still good.\"\n - <i>Lilo and Stitch</i></item>
+        <item>\"We\'re all pretty bizarre. Some of us are just better at hiding it, that\'s all.\"\n - <i>The Breakfast Club</i></item>
+        <item>\"Hello. I am Baymax, your personal healthcare companion.\"\n - <i>Big Hero 6</i></item>
+        <item>\"The secret impresses no one. The trick you use it for is everything.\"\n - <i>The Prestige</i></item>
+    </string-array>
 
     <!--Bullet points for the app information page-->
-    <string name="purposeDesc">- This Application was made to display basic movie information from The Movie Database (TMDb). \n\n</string>
-    <string name="overviewDesc">- By selecting \"overview\" on any of the movie cards a dialog will appear with the overview supplied by TMDb. \n\n</string>
-    <string name="menuDesc">- The menu overflow on the movie page\'s toolbar has different options to chose from to change filter used on TMDb.\n\n</string>
-    <string name="refreshDesc">- The refresh button on the movie page\'s toolbar will reload the list of movies based on the currently selected URL \n\n</string>
-    <string name="infoDesc">- The info button on the movie page\'s toolbar will bring you to this page and the back button located above will return you to the movie page. \n\n</string>
-    <string name="tmdbDesc">- All movie information is obtained through themoviedb.org \n\n</string>
-    <string name="iconDesc">- Vector Resources such as the Refresh icon and Info icon were obtained through materialdesign.io/icons \n\n</string>
-    <string name="quoteDesc">- All quotes are from imdb.com</string>
+    <string-array name="desc">
+        <item>- This Application was made to display basic movie information from The Movie Database (TMDb). \n\n</item>
+        <item>- By selecting \"overview\" on any of the movie cards a dialog will appear with the overview supplied by TMDb. \n\n</item>
+        <item>- The menu overflow on the movie page\'s toolbar has different options to chose from to change filter used on TMDb.\n\n</item>
+        <item>- The refresh button on the movie page\'s toolbar will reload the list of movies based on the currently selected URL \n\n</item>
+        <item>- The info button on the movie page\'s toolbar will bring you to this page and the back button located above will return you to the movie page. \n\n</item>
+        <item>- All movie information is obtained through themoviedb.org \n\n</item>
+        <item>- Vector Resources such as the Refresh icon and Info icon were obtained through materialdesign.io/icons \n\n</item>
+        <item>- All quotes are from imdb.com</item>
+    </string-array>
 
     <!--URLs to search TMDb-->
     <string name="moviesURL">https://api.themoviedb.org/3/movie/%1$s?page=%2$d&amp;language=en-US&amp;api_key=</string>

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.rhenigan.roberthenigantmdb.R;
+import com.rhenigan.roberthenigantmdb.activities.MainActivity;
 import com.rhenigan.roberthenigantmdb.callbacks.TMDbCallback;
 import com.rhenigan.roberthenigantmdb.callbacks.VolleyCallback;
 import com.rhenigan.roberthenigantmdb.dataClasses.Movie;
@@ -44,7 +45,7 @@ public class TMDbClient implements VolleyCallback {
         return mInstance;
     }
 
-    public void getMovies(int filter) {
+    public void getMovies(MainActivity.Filter filter) {
         String URL = mContext.getResources().getString(R.string.moviesURL)
                 + mContext.getResources().getString(R.string.apiKey);
 
@@ -54,22 +55,22 @@ public class TMDbClient implements VolleyCallback {
             // mFilter = 1 --> Top Rated Movies
             // mFilter = 2 --> Now Playing Movies
             // mFilter = 3 --> Upcoming Movies
-            case 0:
+            case POPULAR:
                 //inject the current page count into the URL
                 String popularURL = String.format(URL, "popular", mPopularPage);
                 VolleyClient.getRequest(mContext, popularURL , this);
                 break;
-            case 1:
+            case TOPRATED:
                 //inject the current page count into the URL
                 String topRatedURL = String.format(URL, "top_rated", mTopRatedPage);
                 VolleyClient.getRequest(mContext, topRatedURL, this);
                 break;
-            case 2:
+            case NOWPLAYING:
                 //inject the current page count into the URL
                 String nowPlayingURL = String.format(URL, "now_playing", mNowPlayingPage);
                 VolleyClient.getRequest(mContext, nowPlayingURL, this);
                 break;
-            case 3:
+            case UPCOMING:
                 //inject the current page count into the URL
                 String upcomingURL = String.format(URL, "upcoming", mUpcomingPage);
                 VolleyClient.getRequest(mContext, upcomingURL, this);
@@ -83,18 +84,18 @@ public class TMDbClient implements VolleyCallback {
         }
     }
 
-    public void incPage(int filter) {
+    public void incPage(MainActivity.Filter filter) {
         switch (filter) {
-            case 0:
+            case POPULAR:
                 mPopularPage++;
                 break;
-            case 1:
+            case TOPRATED:
                 mTopRatedPage++;
                 break;
-            case 2:
+            case NOWPLAYING:
                 mNowPlayingPage++;
                 break;
-            case 3:
+            case UPCOMING:
                 mUpcomingPage++;
                 break;
             default:
@@ -102,18 +103,18 @@ public class TMDbClient implements VolleyCallback {
         }
     }
 
-    public void resetPage(int filter) {
+    public void resetPage(MainActivity.Filter filter) {
         switch (filter) {
-            case 0:
+            case POPULAR:
                 mPopularPage = 1;
                 break;
-            case 1:
+            case TOPRATED:
                 mTopRatedPage = 1;
                 break;
-            case 2:
+            case NOWPLAYING:
                 mNowPlayingPage = 1;
                 break;
-            case 3:
+            case UPCOMING:
                 mUpcomingPage = 1;
                 break;
             default:

@@ -2,6 +2,7 @@ package com.rhenigan.roberthenigantmdb.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -26,30 +27,20 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
 
-        Button nextPage = findViewById(R.id.nextPage);
-
         //CharSequence used to place Movie Title in Italics from the String Resources File
         TextView welcomeMessage = findViewById(R.id.welcomeMessage);
-        CharSequence[] mRandomQuote = new CharSequence[]{getText(R.string.quote0),
-                getText(R.string.quote1),
-                getText(R.string.quote2),
-                getText(R.string.quote3),
-                getText(R.string.quote4),
-                getText(R.string.quote5),
-                getText(R.string.quote6),
-                getText(R.string.quote7),
-                getText(R.string.quote8),
-                getText(R.string.quote9)};
+        String[] mRandomQuote = getResources().getStringArray(R.array.quotes);
 
         CharSequence quote = mRandomQuote[new Random().nextInt(mRandomQuote.length)];
         welcomeMessage.setText(quote);
 
-        nextPage.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
-        });
+        }, 5000);
     }
 }

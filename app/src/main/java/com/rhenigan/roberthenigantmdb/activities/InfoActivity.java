@@ -27,11 +27,13 @@ public class InfoActivity extends AppCompatActivity {
 
         TextView infoPage = findViewById(R.id.infoPage);
 
+        String[] desc = getResources().getStringArray(R.array.desc);
+
         //Adding all bullet points to App info page from string resources
-        infoPage.setText(getString(R.string.purposeDesc) + getString(R.string.overviewDesc) +
-                        getString(R.string.menuDesc) + getString(R.string.refreshDesc) +
-                        getString(R.string.infoDesc) + getString(R.string.tmdbDesc) +
-                        getString(R.string.iconDesc) + getString(R.string.quoteDesc));
+        infoPage.setText(desc[0] + desc[1] +
+                desc[2] + desc[3] +
+                desc[4] + desc[5] +
+                desc[6] + desc[7]);
     }
 
     @Override
